@@ -1,5 +1,5 @@
 h1{
-    color:green;
+    color:rgb(0, 255, 0)
     
 }
 h2{
@@ -12,8 +12,16 @@ h3{
     color:blue;
 }
 #navbar{
-  background-color:rgb();
+  background-color:rgb(51,204,17);
 }
 p{
   color:blue;
 }
+#navbar{background: -webkit-linear-gradient(green, red); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(green, red); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(green, red); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(green, red); /* Standard syntax */
+}
+body{background-image: url("http://media3.giphy.com/media/fJ1eCBjmMoEvu/giphy.gif")}
+h2{color: rgb(0, 204, 153)}
+p{color:rgb(0, 255, 255)}
