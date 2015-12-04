@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background-color:rgb(51,0,51)
+    }
+    li{
+       border-style: solid;
+             border-color:red;
+    border-width: 1px;
+    display: inline;
+    }
+    p{
+     color:rgb(102,225,225)
+     
+    }
+</style>	 
+</head>
+<body>
+    <ul id="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutme.html">All About Me </a></li>
+    <li><a href="htmlandcss.html"> Html & CSS</a></li>
+    <li><a href="hardware.html">Hardware </a></li>
+    <li><a href="info.html">Doctor who facts</a></li>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	</ul>
+	  
+<!--some text-->
+<input type="text" name="input1" style="width:50px;" id="input1">
+    <select id="dropdown">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="x">x</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+        <option value="sqrt">&radic;</option>
+    </select>
+    <input type ="text" name="input2" style="width:50px;" id="input2">
+    <input type="button" value="Calculate" id="submitButton" />
+
+    <p>The answer is: <span id="display"></span></p>
+<script src="calc.js" ></script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>stuff</title>
+    <style type="text/css">
+        li{
+              border-style: solid;
+             border-color:red;
+    border-width: 1px;
+    display: inline;
+        }
+        body{
+            background-color:rgb(153,255,205);
+        }.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+img{
+    display:block;
+    margin: 0 auto;
+}
+    </style>
+</head>
+<body>
+     <ul id="navbar">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="hardware.html">Hardware </a></li>
+    <li><a href="htmlandcss.html"> Html & CSS</a></li>
+    <li><a href="calc.html">Calculater</a></li>
+    <li><a href="info.html">Doctor who facts</a></li>
+</ul>
+    <h1>Doctor Who Facts</h1>
+    <div id="item1">
+         <img src="http://advancedgraphics.com/wp-content/uploads/2013/08/1493_Tardis_46.jpg" height="200" width="200">
+    </div>
+    <div id="item2">
+       <img src="http://static.srcdn.com/slir/w700-h350-q90-c700:350/wp-content/uploads/13-Doctor-Who-All-Actors-Cast.jpg" height="200" width="400">
+    </div>
+    <div id="item3">
+        <img src="http://www.thinkgeek.com/images/products/zoom/ee4a_sonic_screwdriver_remote.jpg" height="200" width="300">
+    </div>
+    <div id="item4">
+        <img src="http://www.blastr.com/sites/blastr/files/The-Companions1.jpg" height="225" width="350">
+    </div>
+    
+    <div id="info1">
+        
+    </div>
+    <div id="info2">
+        
+    </div>
+    <div id="info3">
+        
+    </div>
+    <div id="flip" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+		  
+		</div>
+		<div class="back">
+		    
+		</div>
+	</div>
+</div>
+    <script src="info.js"></script>
+</body>
+</html>
