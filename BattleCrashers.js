@@ -8,10 +8,9 @@ var info = document.getElementById("info");
 var place = "beginScreen";
 
 submitButton.addEventListener("click", function(evt){
-
     var text = textbox.value;
     questlog.innerHTML += '<div>' + text + '</div>';
-
+    textbox.value = "";
     if (place === "start" && textbox.value === "yes") {
         place = "starting";
         questlog.innerHTML += "You start out with a stone sword and chain armor and a iron shield.";
@@ -239,7 +238,7 @@ submitButton.addEventListener("click", function(evt){
 
 }, false);
 textbox.addEventListener("submitButton", function(evt) {
-
+    
 });
 button.addEventListener("click", myFunction);
 
@@ -253,7 +252,7 @@ start.addEventListener("click", function() {
 
 
 function Stuff() {
-
+//final boss is the king of the region 
     questlog.innerHTML += "welcome to the world of battle crashers! <br>";
     questlog.innerHTML += "your adventure awaits you do you accept. <br>";
     place = "start";
