@@ -68,7 +68,7 @@ var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
 
         // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is "none"
 
-
+// this is for getting mines
          var enemyMines = []; 
          if(bot.yourBot.id != 1) enemyMines = enemyMines.concat(bot.bot1mines); 
          if(bot.yourBot.id != 2) enemyMines = enemyMines.concat(bot.bot2mines); 
@@ -92,19 +92,21 @@ var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
         /*                                      *
          * This Code Determines HOW to do it    *
          *                                      */
+         //this is a getting free mines 
           var nearMine = bot.freeMines[0]; 
          for(i = 0; i < bot.freeMines.length; i++) { 
              if(bot.findDistance(myPos, nearMine) > bot.findDistance(myPos, bot.freeMines[i])) { 
                 nearMine = bot.freeMines[i]; 
             } 
         } 
-         
+         //this is to get enemy mines.
         var everyMine = enemyMines[0]; 
          for(i = 0; i < enemyMines.length; i++) { 
              if(bot.findDistance(myPos, everyMine) > bot.findDistance(myPos, enemyMines[i])) { 
                 everyMine = enemyMines[i]; 
             } 
         } 
+        //this is for getting to the taverns
            var closestTavern = bot.taverns[0]; 
          for(var i = 0; i < bot.taverns.length; i++) { 
              if(bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos, bot.taverns[i])) { 
@@ -114,30 +116,12 @@ var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
          
 
         // This Code find the nearest freemine and sets myDir toward that direction //
-        //if(task === "freemines") {
-          //  var closestMine = bot.freeMines[0];
-            //for( var i = 0; i < bot.freeMines.length; i++) {
-              //      closestMine = bot.freeMines[i];
-                //}
-            //}
-            //console.log("Claiming a Free Mine!");
-            //myDir = bot.findPath(myPos, closestMine);
-        
-         
-         //if(task === "taverns"){
-           // var closestTavern = bot.taverns[0];
-            //for(var i = 0; i < bot.taverns.length; i++) {
-              //  if(bot.findDistance(myPos, closestTavern) > bot.findDistance(myPos, bot.taverns[i])) {
-                //    closestTavern = bot.taverns[i];
-                //}
-            //}
-            //console.log("Got health");
-            //myDir = bot.findPath(myPos, closestTavern);
-        //}
+       
         //var attacking and victim work together to help my bot know who to attacking when 
          //attacking tells the bot whether or not it should be attackinging anyone to begin with 
          //victim tells the bot who it should attacking, and in this case it victims the bot who has the most 
 // mines besides yourself 
+//this is for attacking players as well as the tavern loop and getting enemy mines when the ememy is in a tavern loop.
         var attacking =  false;
         var victim = 0;
          if([0].mineCount > Bots[1].mineCount && Bots[0].mineCount > Bots[2].mineCount) { 
@@ -161,7 +145,7 @@ var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
          * This Code Sets your direction based on myDir.  If you are trying to go to a place that you can't reach, you move randomly.   *
          * Otherwise you move in the direction set by your code.  Feel free to change this code if you want.                            */
           //if else statement to tell the bot what to do and when 
-        
+        //this is for going to mines and taverns at a certain hp. 
          if(bot.yourBot.life <= 52) { 
             bot.goDir = bot.findPath(myPos, closestTavern); 
         }  else if(bot.yourBot.life > 70 && bot.freeMines.length > 0) { 
